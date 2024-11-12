@@ -5,10 +5,11 @@ import random
 
 with open ("words.txt", "r") as file:
     content = file.readlines()
+    
 
 def chose_random_word():
-    list_of_words = content
-    word_chosen = random.choice(list_of_words)
+   # list_of_words = content
+    word_chosen = random.choice(content)
     return word_chosen
 
 while True:

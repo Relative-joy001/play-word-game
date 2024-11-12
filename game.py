@@ -3,7 +3,7 @@ def print_win_message(word):
     print(win_message)
 
 def print_lose_message(word):
-    lose_message = f"Sorry you lost. The word is: {word}"
+    lose_message = (f"Sorry you lost. The word is: {word}")
     print(lose_message)
 
 
@@ -37,16 +37,16 @@ def update_progress(word, progress, guess):
     update = ""
     for letters in new_progress:
         update = update + letters
-        return update
+    return update
 
 
 def play_word_game(word, total_guess):
 
     print("Welcome to Guess a word game.")
 
-    progress = "_" * len(word)
+    progress = "_"*len(word)
     num_of_guesses = total_guess
-    wrong_letters = ""
+    wrong_letters = " "
 
     while total_guess > 0:
         game_status = print_status(progress, wrong_letters, total_guess)
@@ -54,7 +54,7 @@ def play_word_game(word, total_guess):
         guessed_letters = get_user_guess()
 
         if guessed_letters in progress or guessed_letters in wrong_letters:
-            print("You have already guessed the letter {guessed_letter}. Pick a different letter.")
+            print(f"You have already guessed the letter {guessed_letters}. Pick a different letter.")
             continue
 
         if guessed_letters in word:
@@ -69,4 +69,4 @@ def play_word_game(word, total_guess):
             print_win_message(word)
             break
         elif progress != word and total_guess == 0:
-            print_lose_message
+            print_lose_message(word)
