@@ -21,7 +21,7 @@ def print_status(progress, wrong_letters, num_of_guesses):
 def get_user_guess():
 
     while True:
-        user_guess = input("Guess a letter:  ").lstrip()
+        user_guess = input("Guess a letter: ").lstrip()
         if len(user_guess) == 1 and user_guess.isalpha():
             return user_guess
         else:

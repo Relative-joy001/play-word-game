@@ -3,7 +3,7 @@ import random
 
 
 
-with open ("word.txt", "r") as file:
+with open ("words.txt", "r") as file:
     content = file.readlines()
 
 def chose_random_word():
@@ -24,4 +24,3 @@ while True:
     else:
         print("Thanks for plkaying!!")
         break
-    
